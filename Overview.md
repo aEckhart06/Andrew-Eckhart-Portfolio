@@ -6,8 +6,7 @@ This repository serves as a showcase of my skills, experiences, and interests in
 ------------------------------------------------------------------------------------------------------------------------------------------------------
 About Me
 -
-I am a passionate software engineer with a strong background in computer science. My journey in coding has led me to explore a wide range 
-of technologies, from web development to machine learning, and I'm always eager to learn and tackle new challenges.
+I am a passionate student with a strong background in computer science looking to break into the software engineering industry. My journey in coding has led me to explore a wide range of technologies, from web development to machine learning, and I'm always eager to learn and tackle new challenges.
 
 ------------------------------------------------------------------------------------------------------------------------------------------------------
 Projects Overview
