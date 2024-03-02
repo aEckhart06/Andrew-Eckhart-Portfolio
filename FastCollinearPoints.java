@@ -14,7 +14,10 @@ public class FastCollinearPoints {
     // if three or more points q have equal slope to each other, those points
     // are collinear with point p.
     public FastCollinearPoints(Point[] points) {
-
+        // Adress null argument cases:
+        // - Array argument is null
+        // - A single point in the array argument is null
+        // - A point is repeated in the array argument
         if (points == null) throw new IllegalArgumentException();
         for (int i = 0; i<points.length; i++){
             int j = i;
@@ -33,27 +36,31 @@ public class FastCollinearPoints {
             }
         }
         numOfLineSegments = 0;
-        for (Point point : points) {
+        // Outer loop to iterate through each point individually
+        for (Point point: points) {
 
             Point[] copy = Arrays.copyOf(points, points.length);
             // Sorts copy of original array by slope
             Arrays.sort(copy, point.slopeOrder());
 
-            ArrayList<Point> collinearPoints = new ArrayList<>();
+            ArrayList<Point> collinearPoints= new ArrayList<>();
             int consecutiveEqualSlopes = 0;
             for (int j = 0; j < points.length; j++) {
-                //Checks corner case at the end of the list of points/slopes.
-                //Necessary for vertical cases
+                // Checks corner case at the end of the list of points/slopes.
+                // Necessary for vertical cases
                 if (j == points.length-2 && consecutiveEqualSlopes >= 2){
                     if (Double.compare(point.slopeTo(copy[j]), point.slopeTo(copy[j + 1])) == 0){
                         collinearPoints.add(copy[j+1]);
                         collinearPoints.add(copy[j]);
                     }
 
-                    //Add original point
+                    // Add original point
                     collinearPoints.add(point);
 
-
+                    // Implement insertion sort algorithm to effectively sort
+                    // a set of collinear points based on their (x,y) position
+                    // Implement a comparator to distinguish greater vs. lesser
+                    // positions
                     for (int i = 0; i < collinearPoints.size(); i++) {
                         int q = i;
                         Point temp;
@@ -64,7 +71,7 @@ public class FastCollinearPoints {
                             q--;
                         }
                     }
-                    //Sets the minimum and maximum points in the new line segment
+                    // Sets the minimum and maximum points in the new line segment
                     Point lo = collinearPoints.get(0);
                     Point hi = collinearPoints.get(collinearPoints.size()-1);
                     LineSegment newSegment = new LineSegment(lo, hi);
@@ -84,10 +91,10 @@ public class FastCollinearPoints {
                 }
 
                 else if(consecutiveEqualSlopes >= 2){
-                        //Adds the original point to the list of current collinear points
+                        // Adds the original point to the list of current collinear points
                         collinearPoints.add(point);
 
-                        //Sorts the current list of collinear points
+                        // Sorts the current list of collinear points
                         for (int i = 0; i < collinearPoints.size(); i++) {
                             int q = i;
                             Point temp;
@@ -98,7 +105,7 @@ public class FastCollinearPoints {
                                 q--;
                             }
                         }
-                        //Sets the minimum and maximum points in the new line segment
+                        // Sets the minimum and maximum points in the new line segment
                         Point lo = collinearPoints.get(0);
                         Point hi = collinearPoints.get(collinearPoints.size()-1);
                         LineSegment newSegment = new LineSegment(lo, hi);
@@ -108,9 +115,15 @@ public class FastCollinearPoints {
                             alLS.add(newSegment);
 
                         }
+                        // Clear and reset array holding collinear points and
+                        // counter keeping track of the number of consecutive 
+                        // collinear points
                         collinearPoints.clear();
                         consecutiveEqualSlopes = 0;
                     }
+                // Address cases such as:
+                // Consecutive collinear points < 4
+                // The end of the 'points' array is reached
                 else if (consecutiveEqualSlopes == 1 || j>=points.length-1) {
                     collinearPoints.clear();
                     consecutiveEqualSlopes = 0;
@@ -118,6 +131,8 @@ public class FastCollinearPoints {
             }
         }
     }
+    // Private method to compare newly found line segments with previously found line segments 
+    // to ensure there are no duplicates
     private boolean checkDuplicates(ArrayList<LineSegment> lineSegments, LineSegment segment){
         for (LineSegment lineSegment : lineSegments) {
             if (segment.toString().equals(lineSegment.toString())) return true;
@@ -125,7 +140,7 @@ public class FastCollinearPoints {
         return false;
     }
 
-
+    // Copy ArrayList of line segments into an array
     private LineSegment[] copy(){
         LineSegment[] lineSegments = new LineSegment[alLS.size()];
         for(int i = 0; i<alLS.size(); i++){
@@ -135,20 +150,19 @@ public class FastCollinearPoints {
     }
 
 
-    // the number of line segments
+    // Return the number of line segments
     public int numberOfSegments(){
         return numOfLineSegments;
     }
 
 
-    // the line segments
-
+    // Return the line segments
     public LineSegment[] segments(){
         return copy();
     }
 
 
-
+    // Main method for testing
     public static void main(String[]args){
 
         In in = new In(args[0]);
