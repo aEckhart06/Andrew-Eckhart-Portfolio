@@ -11,7 +11,7 @@ I am a passionate student with a strong background in computer science looking t
 ------------------------------------------------------------------------------------------------------------------------------------------------------
 Projects Overview
 -
-In this repository, you'll discover a diverse array of projects that I've worked on, each demonstrating different aspects of my expertise 
+In this repository, you'll discover an array of projects that I've worked on, each demonstrating different aspects of my expertise 
 and interests. Whether it's building web applications, creating algorithms, or diving into data analysis, I strive to deliver high-quality 
 solutions that are both innovative and efficient.
 
