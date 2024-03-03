@@ -18,6 +18,5 @@ solutions that are both innovative and efficient.
 ------------------------------------------------------------------------------------------------------------------------------------------------------
 Contact Me!
 -
-If you have any questions, feedback, or collaboration opportunities, don't hesitate to reach out to me. You can find my contact information 
-in the profile section of this repository. I hope you enjoy exploring my projects as much as I enjoyed creating them. Thank you for visiting 
+If you have any questions, feedback, or collaboration opportunities, don't hesitate to reach out to me. You can find my LinkedIn information in my profile description. I hope you enjoy exploring my projects as much as I enjoyed creating them. Thank you for visiting 
 my portfolio repository!
