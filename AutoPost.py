@@ -183,7 +183,7 @@ def newVideo(lawNum):
 
 def getCaption(lawNum) :
     systemGuidelines = open("SystemGuidelines", "r").read()
-    openai.api_key = "sk-proj-xEb1sMq24CDukBVzybJ5T3BlbkFJY5cUQYTE4qXGeK3kHnqz"
+    openai.api_key = "PRIVATE_API_KEY"
     completion = openai.chat.completions.create(
       model="gpt-4o",
       messages=[
