@@ -12,11 +12,11 @@ I am a passionate student with a strong background in computer science looking t
 Projects Overview
 -
 In this repository, you'll discover an array of projects that I've worked on, each demonstrating different aspects of my expertise 
-and interests. Whether it's building web applications, creating algorithms, or diving into data analysis, I strive to deliver high-quality 
+and interests. Whether it's building algorithms, creating iOS projects, or automating a process, I strive to deliver high-quality 
 solutions that are both innovative and efficient.
 
 ------------------------------------------------------------------------------------------------------------------------------------------------------
 Contact Me!
 -
-If you have any questions, feedback, or collaboration opportunities, don't hesitate to reach out to me. My LinkedIn information can be found in my profile description OR send me an email at age1210756@gmail.com. I hope you enjoy exploring my projects as much as I enjoyed creating them. Thank you for visiting 
+If you have any questions, feedback, or collaboration opportunities, don't hesitate to reach out to me. My LinkedIn information can be found in my profile description OR send me an email at andrew.eckhart6@gmail.com. I hope you enjoy exploring my projects as much as I enjoyed creating them. Thank you for visiting 
 my portfolio repository!
